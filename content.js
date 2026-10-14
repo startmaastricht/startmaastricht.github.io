@@ -29,17 +29,30 @@
     }
 
     var container = document.getElementById('board-mitglieder');
-    if (!container || !data.mitglieder) return;
+    if (container && data.mitglieder) {
+      container.innerHTML = '';
+      data.mitglieder.forEach(function (m) {
+        var div = document.createElement('div');
+        div.className = 'rule-top person';
+        div.innerHTML =
+          '<p class="person-name">' + m.name + '</p>' +
+          '<p class="person-role">' + m.rolle + '</p>';
+        container.appendChild(div);
+      });
+    }
 
-    container.innerHTML = '';
-    data.mitglieder.forEach(function (m) {
-      var div = document.createElement('div');
-      div.className = 'rule-top person';
-      div.innerHTML =
-        '<p class="person-name">' + m.name + '</p>' +
-        '<p class="person-role">' + m.rolle + '</p>';
-      container.appendChild(div);
-    });
+    /* ── Head of Partnerships in der "For partners" Section synchronisieren ── */
+    if (data.mitglieder) {
+      var partnerHead = data.mitglieder.find(function (m) {
+        return /partnership/i.test(m.rolle);
+      });
+      if (partnerHead) {
+        var nameEl = document.getElementById('partner-contact-name');
+        var roleEl = document.getElementById('partner-contact-role');
+        if (nameEl) nameEl.textContent = partnerHead.name;
+        if (roleEl) roleEl.textContent = partnerHead.rolle;
+      }
+    }
   }
 
   /* ── Events rendern ── */
@@ -135,8 +148,16 @@
     document.querySelectorAll('[data-slot]').forEach(function (f) {
       var slot = f.getAttribute('data-slot');
       var src = data[slot];
-      if (!src) return;
 
+      if (!src) {
+        // Leere Slots ohne Foto ausblenden, damit keine unschönen leeren Boxen entstehen
+        if (!f.querySelector('img')) {
+          f.style.display = 'none';
+        }
+        return;
+      }
+
+      f.style.display = '';
       var img = f.querySelector('img');
       if (img) {
         img.src = src;

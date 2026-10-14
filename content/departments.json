@@ -9,40 +9,32 @@
     },
     {
       "name": "Marketing",
-      "beschreibung": "We find creative and fun ways to engage with our ecosystem, communicate the values, vision, and happenings in START Maastricht, and connect to stakeholders, like students, industry partners, universities and other initiatives."
+      "beschreibung": "We find creative and fun ways to engage with our ecosystem, communicate our values and vision, and connect students, partners, and universities through fresh storytelling and branding."
     },
     {
       "name": "Operations",
-      "beschreibung": "The Operations department is the backbone of our organization. We make sure our processes run smoothly and that START is set up for long-term success legally and operationally."
+      "beschreibung": "The backbone of our organization. We make sure our processes run smoothly, finances are sound, and START is set up for long-term operational success."
     },
     {
       "name": "Partnerships",
-      "beschreibung": "We establish and nurture flourishing partnerships that unite entrepreneurial minds. We work toward a positive impact for our members, partners and Maastricht's entrepreneurship ecosystem."
+      "beschreibung": "We establish and nurture flourishing partnerships that unite entrepreneurial minds, creating tangible impact for members, partners, and Maastricht's startup ecosystem."
     }
   ],
   "learn_and_grow": {
-    "ueberschrift": "Learn &amp; grow: main tasks",
-    "intro": "We're the creative heart of START Maastricht, shaping how the world sees and connects with our community. Through design, storytelling, and social media, we bring students, startups, and ideas together in a fresh and engaging way. Alongside our work, we love organizing team dinners and workshops where we learn from each other and ensure a great time.",
+    "ueberschrift": "Learn &amp; grow through real ownership",
+    "intro": "As an active member in one of our departments, you take real ownership of projects from day one, expanding your hard and soft skills in a supportive team.",
     "aufgaben": [
       {
-        "titel": "Showcasing START",
-        "beschreibung": "We create content that reflects on the life of a STARTie, from social events to the work of other chapters, we bring our mission and vision to life across platforms. Whether it's Instagram, TikTok, LinkedIn, or our website, we ensure START's message is heard by the entrepreneurial community in Maastricht."
+        "titel": "Projects &amp; Sprints",
+        "beschreibung": "Turn ambitious ideas into reality. Whether organizing major competitions or rolling out new initiatives, you develop proactive project management and execution skills."
       },
       {
-        "titel": "Promoting events",
-        "beschreibung": "From our yearly START Summit to our monthly Drinks &amp; Demos, we make our events shine. Our team designs visuals, creates desire, and captures the vibe during and after the event. We show behind the scenes and highlight every event in order to grow START and engage you."
+        "titel": "Skill-Building &amp; Workshops",
+        "beschreibung": "Learn directly from experienced founders and industry experts through hands-on masterclasses in fundraising, marketing, operations, and leadership."
       },
       {
-        "titel": "Highlighting startups",
-        "beschreibung": "We spotlight the rising startups around Maastricht, sharing their stories, journeys, and successes to inspire the next generation of founders. Through interviews, features, and visual content, we help local innovation gain the attention it deserves."
-      },
-      {
-        "titel": "Workshops",
-        "beschreibung": "We hope you're hungry for knowledge. We find the experts of various fields and learn from them in interactive and hands-on workshops."
-      },
-      {
-        "titel": "Projects &amp; sprints",
-        "beschreibung": "At START Maastricht you will find a safe space to tackle any crazy project you think of. Be it within our departments or a personal side project you want to bring into reality."
+        "titel": "Ecosystem &amp; Network",
+        "beschreibung": "Build genuine connections with founders, innovators, and our Europe-wide START network across 22+ cities that accelerate your personal and professional journey."
       }
     ]
   }

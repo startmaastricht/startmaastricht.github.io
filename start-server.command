@@ -1,24 +1,24 @@
 #!/bin/bash
 # -------------------------------------------------------------
-# START Maastricht – Lokalen Server starten (Doppelklick genügt)
+# START Maastricht – Local Website Preview (Double-click to run)
 # -------------------------------------------------------------
 cd "$(dirname "$0")"
 
 PORT=8080
-# Freien Port finden, falls 8080 belegt ist
+# Find an available port if 8080 is in use
 while lsof -Pi :$PORT -sTCP:LISTEN -t >/dev/null ; do
     PORT=$((PORT+1))
 done
 
 echo "==================================================="
-echo "  START Maastricht – Lokale Website-Vorschau"
+echo "  START Maastricht – Local Website Preview"
 echo "==================================================="
-echo "Server startet auf: http://localhost:$PORT"
-echo "Drücke Ctrl+C, um den Server zu stoppen."
+echo "Server starting at: http://localhost:$PORT"
+echo "Press Ctrl+C to stop the server."
 echo "==================================================="
 
-# Browser automatisch öffnen
+# Automatically open browser
 (sleep 1 && open "http://localhost:$PORT") &
 
-# Python Webserver starten (auf jedem Mac vorinstalliert)
+# Start local web server (pre-installed on macOS)
 python3 -m http.server $PORT

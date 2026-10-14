@@ -1,88 +1,110 @@
-# START Maastricht Website – Anleitung für Bearbeiter
+# START Maastricht Website – Contributor Guide
 
-Diese Website wurde so aufgebaut, dass **Design, Technik und Inhalte strikt getrennt** sind.
-Dadurch kann jeder im Team Texte, Vorstandsmitglieder, Events, FAQs und Fotos verändern – ganz **ohne HTML- oder Programmierkenntnisse**.
+This website is designed with a **clean separation of design, structure, and content**.
+Anyone on the team can edit texts, board members, events, FAQs, and photos **without any technical, HTML, or coding knowledge**.
 
 ---
 
-## 📁 Ordner-Übersicht
+## 📁 Project Structure
 
 ```text
 start website/
-├── content/               <-- HIER WERDEN INHALTE BEARBEITET (JSON)
-│   ├── board.json         <-- Vorstandsmitglieder & Rollen
-│   ├── events.json        <-- Events, Beschreibungen & Event-Bilder
-│   ├── faq.json           <-- Häufige Fragen & Antworten
-│   ├── departments.json   <-- Departments & "Learn & Grow" Aufgaben
-│   └── photos.json        <-- Zuweisung der Fotos zu den Website-Bereichen
+├── content/               <-- EDIT YOUR CONTENT HERE (JSON files)
+│   ├── board.json         <-- Board members & roles (auto-syncs with For Partners section!)
+│   ├── events.json        <-- Events, descriptions, and event images
+│   ├── faq.json           <-- Frequently asked questions & answers
+│   ├── departments.json   <-- Departments & member tasks
+│   └── photos.json        <-- Assigns photos to website slots
 │
-├── photos/                <-- HIER LIEGEN ALLE BILDER & LOGOS
-│   ├── hero.jpg
+├── photos/                <-- STORE ALL IMAGES & LOGOS HERE
+│   ├── hero.jpg, about.jpg, community.jpeg, students.jpeg, partners.jpeg
 │   ├── rtss.jpg, dd.jpg, stc.jpg, online.jpg
-│   ├── start_maastricht.svg, favicon.svg
-│   └── (neue Bilder einfach hier hineinkopieren)
+│   └── (simply place any new photos here)
 │
-├── index.html             <-- HTML-Grundgerüst der Website
-├── style.css              <-- Design & Styling (Farben, Abstände, Schriftarten)
-├── main.js                <-- Interaktionen (Menü, Scrollbalken, Animationen)
-├── content.js             <-- Lädt die Daten aus content/ automatisch in die Seite
-└── start-server.command   <-- Doppelklick zum Starten einer lokalen Vorschau (Mac)
+├── index.html             <-- Semantic HTML structure of the website
+├── style.css              <-- Design & styling (colors, typography, spacing)
+├── main.js                <-- Interactive elements (mobile menu, scroll progress, animations)
+├── content.js             <-- Automatically loads data from content/ into the page
+└── start-server.command   <-- Double-click to preview the site locally on macOS
 ```
 
 ---
 
-## 🚀 Website lokal anschauen (Vorschau auf dem Mac)
+## 🚀 How to Preview the Website Locally (Mac)
 
-Moderne Browser blockieren aus Sicherheitsgründen das Nachladen von externen JSON-Dateien, wenn man eine HTML-Datei einfach per Doppelklick als Datei (`file://`) öffnet.
+Modern browsers block loading external JSON files when opening an HTML file directly via double-click (`file:///`) due to browser security restrictions.
 
-**Die einfachste Lösung:**
-- Mache einfach einen **Doppelklick auf `start-server.command`**.
-- Es öffnet sich sofort dein Browser mit der Website unter `http://localhost:8080`.
-- Änderungen an den JSON-Dateien sind nach einem einfachen Neuladen im Browser (Cmd + R) sofort sichtbar!
+**The simplest way to preview:**
+1. **Double-click `start-server.command`** in the folder.
+2. A terminal window will open and your browser will launch automatically at `http://localhost:8080`.
+3. Whenever you save an edit in any JSON file, just refresh the browser (**Cmd + R**) to see your changes immediately.
+
+*(Note: Once the website is uploaded to a live web hosting service like Netlify, Vercel, or your domain, everything loads automatically without needing any local script.)*
 
 ---
 
-## ✏️ Wie ändere ich Inhalte?
+## ✏️ How to Edit Content
 
-Alle Inhalte liegen im Ordner **`content/`** als `.json`-Dateien. Du kannst sie mit jedem Texteditor (z.B. TextEdit, VS Code, Notepad) öffnen.
+All content files reside in the **`content/`** folder. You can open and edit them with any text editor (TextEdit, VS Code, Notepad, etc.).
 
-### 1. Board-Mitglieder ändern (`content/board.json`)
+### 1. Board Members (`content/board.json`)
 ```json
 {
   "ueberschrift": "Meet the team: the board",
   "mitglieder": [
-    { "name": "Léo Tambourg", "rolle": "President" },
-    { "name": "Selina Rametsteiner", "rolle": "Vice President" }
+    { "name": "Lara Enzi", "rolle": "President" },
+    { "name": "Leo Böse", "rolle": "Vice President" },
+    { "name": "Jakob Rojahn", "rolle": "Head of Partnerships" }
   ]
 }
 ```
-- Möchtest du jemanden hinzufügen? Einfach eine neue Zeile mit `{ "name": "...", "rolle": "..." }` ergänzen.
-- Achte darauf, dass zwischen den Einträgen ein Komma steht (nur nach dem letzten Eintrag kein Komma).
+- **Automatic Sync:** The person with `"rolle": "Head of Partnerships"` is **automatically updated** in both the Board section and the "For Partners" contact section!
+- To add a new member, simply add a new line: `{ "name": "...", "rolle": "..." }`.
+- *Make sure every item has a comma after it, except for the last item in the list.*
 
 ---
 
-### 2. Events anpassen (`content/events.json`)
-Jedes Event hat einen Titel, Beschreibung und ein Foto:
+### 2. Photos (`content/photos.json` & `photos/`)
+1. Place your image file (e.g., `about.jpg`) inside the **`photos/`** folder.
+2. Open **`content/photos.json`** and specify the filename for the matching section:
+```json
+{
+  "hero":       "photos/hero.jpg",
+  "about":      "photos/about.jpg",
+  "community":  "photos/community.jpeg",
+  "students":   "photos/students.jpeg",
+  "partners":   "photos/partners.jpeg",
+  "board":      "",
+  "team":       ""
+}
+```
+- **Clean display:** Any slot left empty (`""`) is automatically hidden so no empty placeholder boxes clutter the live site.
+- Photos are styled with compact, modern aspect ratios to keep the page clean and engaging.
+
+---
+
+### 3. Events (`content/events.json`)
+Each event entry has a title, photo, and description:
 ```json
 {
   "id": "rtss",
   "titel": "Road to START Summit",
   "foto": "photos/rtss.jpg",
-  "foto_alt": "Beschreibung des Bildes",
-  "beschreibung": "Hier steht der Text..."
+  "foto_alt": "Two hosts on stage at Road to START Summit",
+  "beschreibung": "Our annual pitching competition..."
 }
 ```
 
 ---
 
-### 3. FAQ bearbeiten (`content/faq.json`)
-Hier kannst du Fragen und Antworten direkt anpassen:
+### 4. FAQs (`content/faq.json`)
+You can freely add, modify, or remove questions and answers:
 ```json
 {
   "faqs": [
     {
       "frage": "Do I have to have a startup to join?",
-      "antwort": "No. You should have an intrinsic motivation..."
+      "antwort": "No. You should have an intrinsic motivation towards entrepreneurship topics..."
     }
   ]
 }
@@ -90,25 +112,12 @@ Hier kannst du Fragen und Antworten direkt anpassen:
 
 ---
 
-### 4. Fotos ändern oder neue einfügen (`content/photos.json` & `photos/`)
-1. Speichere dein neues Bild (z.B. `unser-team.jpg`) im Ordner **`photos/`**.
-2. Öffne **`content/photos.json`** und trage den Dateinamen beim gewünschten Slot ein:
-```json
-{
-  "hero":       "photos/hero.jpg",
-  "about":      "photos/unser-team.jpg",
-  "community":  "",
-  "students":   "",
-  "partners":   "",
-  "board":      "",
-  "team":       ""
-}
-```
-*Wenn du ein Feld leer lässt (`""`), bleibt der Platzhalter sichtbar.*
+### 5. Departments (`content/departments.json`)
+Update the department names, descriptions, and the 3 core "Learn & Grow" pillars.
 
 ---
 
-## 🎨 Design anpassen
-
-- **Farben & Typografie:** Alle Design-Tokens und Stile befinden sich in **`style.css`**.
-- Die HTML-Struktur in **`index.html`** muss für Text- und Inhaltsänderungen nicht angefasst werden.
+## 💡 JSON Tips for Beginners
+- Always enclose keys and text values in double quotes: `"name": "Value"`.
+- Do not put a comma after the last item in a list or object.
+- If you accidentally make a syntax error, check the browser console (**Right click -> Inspect -> Console**) which will tell you the exact line number.
