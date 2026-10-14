@@ -1,0 +1,12 @@
+{
+  "_kommentar": "Hier kannst du die Board-Mitglieder bearbeiten. Einfach Namen und Rolle ändern oder neue Einträge hinzufügen.",
+  "ueberschrift": "Meet the team: the board",
+  "mitglieder": [
+    { "name": "Léo Tambourg",       "rolle": "President" },
+    { "name": "Selina Rametsteiner","rolle": "Vice President" },
+    { "name": "Lara Enzi",          "rolle": "Head of Operations" },
+    { "name": "Kaya Bollmann",      "rolle": "Head of HR" },
+    { "name": "Tamara von Achten",  "rolle": "Head of Partnerships" },
+    { "name": "Julius Haberstroh",  "rolle": "Head of Marketing" }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "_kommentar": "Hier kannst du alle Fotos eintragen. Gib einfach den Dateinamen aus dem 'photos/' Ordner an. Leer lassen = kein Foto.",
+  "hero":       "photos/hero.jpg",
+  "about":      "",
+  "community":  "",
+  "students":   "",
+  "partners":   "",
+  "board":      "",
+  "team":       ""
+}

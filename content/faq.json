@@ -1,0 +1,29 @@
+{
+  "_kommentar": "Hier kannst du alle FAQs bearbeiten. Einfach Fragen und Antworten ändern, hinzufügen oder entfernen.",
+  "faqs": [
+    {
+      "frage": "My background is not in business, can I still join?",
+      "antwort": "Of course, our members come from a variety of fields, not just from business backgrounds."
+    },
+    {
+      "frage": "Do I have to have a startup to join?",
+      "antwort": "No. You should have an intrinsic motivation towards entrepreneurship topics, a hands-on mentality and willingness to learn."
+    },
+    {
+      "frage": "I'm not a student in Maastricht, can I still join START Maastricht?",
+      "antwort": "No, to become a member, you need to be a student enrolled in one of the universities in Maastricht. You are, however, very welcome to join one of our public events or collaborate with us."
+    },
+    {
+      "frage": "How active is the community?",
+      "antwort": "We prioritize an active and lively community by organizing over 20 events and community meetups, as well as working in smaller groups on various projects."
+    },
+    {
+      "frage": "How can I benefit from joining START Maastricht?",
+      "antwort": "You will get immersed into the entrepreneurship ecosystem, and find a community of like-minded, highly motivated and inspiring students that quickly become good friends. We have frequent event formats where you will gain new skills and insights and tackle hands-on challenges. As an active member you will join one of our departments, where you have additional opportunities to gain new skills and carry out projects."
+    },
+    {
+      "frage": "What are the tasks I have to do as a member?",
+      "antwort": "You will choose one of our departments to become an active member and take on different projects. By doing this, you will have a chance to practice proactive project management and execution, and develop new department-specific hard skills like building automations, designing a marketing campaign, partner acquisition, event organization or recruiting of new members."
+    }
+  ]
+}

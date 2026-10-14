@@ -1,0 +1,45 @@
+{
+  "_kommentar": "Hier kannst du alle Events bearbeiten. 'foto' ist der Dateiname im Ordner 'photos/'.",
+  "events": [
+    {
+      "id": "rtss",
+      "titel": "Road to START Summit",
+      "foto": "photos/rtss.jpg",
+      "foto_alt": "Two hosts on stage at Road to START Summit in a Maastricht University hall",
+      "foto_position": "50% 50%",
+      "foto_breite": 1500,
+      "foto_hoehe": 1125,
+      "beschreibung": "Our annual pitching competition that brings the most innovative early-stage startups on one stage. They pitch for a monetary prize and a chance to pitch in front of 6000+ people at the entrepreneurship conference START Summit."
+    },
+    {
+      "id": "dd",
+      "titel": "Drinks &amp; Demos",
+      "foto": "photos/dd.jpg",
+      "foto_alt": "Community gathered for a Drinks & Demos evening",
+      "foto_position": "50% 55%",
+      "foto_breite": 1500,
+      "foto_hoehe": 1125,
+      "beschreibung": "Drinks &amp; Demos is a monthly event where entrepreneurs, startup founders, and business leaders share their journeys, insights, and strategies for success — all over a relaxed networking atmosphere."
+    },
+    {
+      "id": "stc",
+      "titel": "START the Conversation",
+      "foto": "photos/stc.jpg",
+      "foto_alt": "Panel of speakers at START the Conversation",
+      "foto_position": "70% 50%",
+      "foto_breite": 1500,
+      "foto_hoehe": 843,
+      "beschreibung": "START the Conversation is our expert circle: panel discussions on a specific topic, where experts share their views, debate with each other and open up the conversation to our community."
+    },
+    {
+      "id": "online",
+      "titel": "Online speaker events",
+      "foto": "photos/online.jpg",
+      "foto_alt": "Students watching an online speaker event in a lecture hall",
+      "foto_position": "50% 56%",
+      "foto_breite": 1100,
+      "foto_hoehe": 1466,
+      "beschreibung": "Not every great founder can be in Maastricht. In our online speaker events, founders of, for example, Google Maps and SumUp share their story with our community and answer the questions our members have."
+    }
+  ]
+}
