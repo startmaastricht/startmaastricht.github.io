@@ -121,4 +121,82 @@
       counterObserver.observe(el);
     });
   }
+
+  /* ===== Privacy Policy Modal ===== */
+  var privacyModal = document.getElementById('privacy-modal');
+  var privacyLinks = document.querySelectorAll('a[href="#privacy"], [data-open-modal="privacy"], #privacy-link');
+  var closeBtns = document.querySelectorAll('[data-close-modal]');
+  var lastActiveElement = null;
+
+  function openPrivacyModal(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    if (!privacyModal) return;
+
+    lastActiveElement = document.activeElement;
+    privacyModal.hidden = false;
+
+    // Trigger reflow for CSS transition
+    void privacyModal.offsetWidth;
+
+    privacyModal.classList.add('is-open');
+    document.body.classList.add('modal-open');
+
+    // Accessibility focus on the close button
+    var closeBtn = privacyModal.querySelector('.modal-close');
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closePrivacyModal() {
+    if (!privacyModal || !privacyModal.classList.contains('is-open')) return;
+
+    privacyModal.classList.remove('is-open');
+    document.body.classList.remove('modal-open');
+
+    setTimeout(function () {
+      if (!privacyModal.classList.contains('is-open')) {
+        privacyModal.hidden = true;
+      }
+    }, 300);
+
+    if (window.location.hash === '#privacy') {
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      } else {
+        window.location.hash = '';
+      }
+    }
+
+    if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+      lastActiveElement.focus();
+    }
+  }
+
+  privacyLinks.forEach(function (link) {
+    link.addEventListener('click', openPrivacyModal);
+  });
+
+  closeBtns.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      closePrivacyModal();
+    });
+  });
+
+  window.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && privacyModal && privacyModal.classList.contains('is-open')) {
+      closePrivacyModal();
+    }
+  });
+
+  if (window.location.hash === '#privacy') {
+    openPrivacyModal();
+  }
+
+  window.addEventListener('hashchange', function () {
+    if (window.location.hash === '#privacy') {
+      openPrivacyModal();
+    } else if (privacyModal && privacyModal.classList.contains('is-open')) {
+      closePrivacyModal();
+    }
+  });
 })();

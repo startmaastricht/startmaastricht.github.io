@@ -244,3 +244,201 @@ section.scope{padding:clamp(28px,4vw,48px) var(--pad-x)}
 .event .photo{--ar:16/10;max-height:280px;border-radius:8px}
 .event-text p{margin:0}
 @media (max-width:860px){.event,.event:nth-child(even){grid-template-columns:1fr}.event:nth-child(even) .photo{order:0}}
+
+/* ---------- Privacy Policy Modal ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 3.5vw, 40px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+
+.modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 44, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.modal-window {
+  position: relative;
+  z-index: 1;
+  width: min(880px, 100%);
+  max-height: min(88vh, 850px);
+  display: flex;
+  flex-direction: column;
+  background: #001744;
+  background: linear-gradient(180deg, #001f5c 0%, #001032 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(5, 195, 222, 0.2);
+  color: var(--white, #ffffff);
+  overflow: hidden;
+  transform: scale(0.95) translateY(14px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.is-open .modal-window {
+  transform: scale(1) translateY(0);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(18px, 2.5vw, 24px) clamp(20px, 3vw, 32px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 30, 98, 0.55);
+  flex-shrink: 0;
+  gap: 16px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.modal-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.modal-close svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  transition: transform 0.2s ease;
+}
+
+.modal-close:hover {
+  background: var(--poppy, #FF9E1B);
+  border-color: var(--poppy, #FF9E1B);
+  color: var(--stratos, #00002C);
+  transform: scale(1.06);
+}
+
+.modal-close:hover svg {
+  transform: rotate(90deg);
+}
+
+.modal-close:focus-visible {
+  outline: 3px solid var(--egg, #05C3DE);
+  outline-offset: 3px;
+}
+
+.modal-body {
+  padding: clamp(20px, 3.5vw, 36px) clamp(20px, 3.5vw, 36px) 48px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.88);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.05);
+}
+
+.modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+.modal-body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+.modal-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+}
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: var(--egg, #05C3DE);
+}
+
+.modal-updated {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--egg, #05C3DE);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  padding: 4px 12px;
+  background: rgba(5, 195, 222, 0.12);
+  border-radius: 999px;
+  border: 1px solid rgba(5, 195, 222, 0.25);
+}
+
+.modal-body h3 {
+  font-size: clamp(1.2rem, 1.8vw, 1.4rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 2rem 0 0.8rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.modal-body h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--egg, #05C3DE);
+  margin: 1.4rem 0 0.5rem;
+}
+
+.modal-body p {
+  margin: 0 0 1rem;
+  max-width: 100%;
+}
+
+.modal-body ul {
+  margin: 0 0 1.2rem 1.4rem;
+  list-style: disc;
+}
+
+.modal-body li {
+  margin-bottom: 0.4rem;
+}
+
+.modal-body strong {
+  color: #ffffff;
+}
+
+.modal-body a {
+  color: var(--egg, #05C3DE);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.modal-body a:hover {
+  color: var(--poppy, #FF9E1B);
+}
+
+/* Prevent body scrolling when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
